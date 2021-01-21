@@ -1,0 +1,60 @@
+
+<mat-drawer-container class="example-container mat-typography" autosize>
+  <mat-drawer #drawer mode="side" disableClose="true" opened="true">
+    <button  (click)="isExpanded = !isExpanded"  style="margin: 10px;display: contents;">
+      <mat-icon aria-label="Menu"><img src="../../assets/chair.png" alt="" style="margin: 10px;"></mat-icon>
+    </button>
+
+    <mat-nav-list>
+      <mat-list-item>
+        <mat-icon><img src="../../assets/cal.png" alt="" srcset=""></mat-icon>
+        <h4 mat-line *ngIf="isExpanded">Calender</h4>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon ><img src="../../assets/dine.png" alt="" srcset=""></mat-icon>
+        <h4 mat-line *ngIf="isExpanded">Dine B</h4>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon ><img src="../../assets/con.png" alt="" srcset=""></mat-icon>
+        <h4 mat-line *ngIf="isExpanded">Contacts</h4>
+      </mat-list-item>
+      
+    </mat-nav-list>
+  </mat-drawer>
+
+  
+    <div class="example-sidenav-content" style="margin-top: 20px;">
+      <div class="container">
+      <h1>The GREAT TABLE <img src="../../assets/search.png" alt="" srcset="" style="float: right; margin: 20px;"></h1>  
+        <h4>Today </h4>
+        
+        
+        
+        
+        
+      <div class="main">
+        <div>
+          <h3>Table <b>5 - Mr Einstein</b></h3>
+          <mat-tab-group [color]="black" [backgroundColor]="white">
+            <mat-tab label="Drinks">     
+              
+              
+              <mat-select [(value)]="selected" placeholder="Wine">
+                <mat-option>Rum</mat-option>
+                <mat-option>Whiskey</mat-option>
+              </mat-select>
+              
+              <app-product-list  ></app-product-list>
+            </mat-tab>
+            <mat-tab label="Food"> </mat-tab>
+            <mat-tab label="Desert"></mat-tab>
+          </mat-tab-group>
+        </div>
+      <app-shopping-cart  ></app-shopping-cart>
+      </div>
+      
+    </div>
+  </div>
+
+
+</mat-drawer-container>

@@ -1,0 +1,19 @@
+<div *ngFor="let product of products"  >
+    <div class="wrapper">
+        <img src="{{product.pic}}" alt="" srcset="" width="20px">
+        <div class="des">
+            <p>{{product.name}}</p>
+            <div><p>{{product.price.toLocaleString('en-US', {style: 'currency', currency: 'USD'})}}</p>
+                
+            </div>
+            <div class="input-group">
+                <input type="button" value="-" class="button-minus" data-field="quantity" (click)="deleteProductFromCart(product)">
+                <input type="number" step="0" max="" value="{{product.cc}}" name="quantity" class="quantity-field" min="0"  > 
+                <input type="button" value="+" class="button-plus" data-field="quantity" (click)="addProductToCart(product)">
+              </div>
+        </div>
+    </div>
+    
+   
+
+</div>

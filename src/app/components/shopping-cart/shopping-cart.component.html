@@ -1,0 +1,48 @@
+<!-- <h1>Shopping Cart ({{ this.cs.calcTotal() }}) <mat-slide-toggle
+    class="example-margin">
+  Slide me!
+</mat-slide-toggle> </h1> -->
+
+<div class="sc">
+    <mat-slide-toggle class="example-margin"><p>split check</p></mat-slide-toggle> 
+<br>
+<h2><b>check</b> </h2>
+  <div *ngFor="let product of cs.cartProductList"  >
+    <div *ngIf="product">
+        <div class="cart-list"> 
+            <p> {{product.name}} </p>
+            <p>{{product.price.toLocaleString('en-US', {style: 'currency', currency: 'USD'})}} x {{product.num}}</p>
+            <p>{{ (product.price * product.num).toLocaleString('en-US', {style: 'currency', currency: 'USD'}) }}</p>
+        </div>
+
+        
+        <!-- <input type="number" [(ngModel)]="product.num" min="0" /> -->
+      </div>
+  </div>
+
+  <div class="billing">
+
+  <div class="subtotal">
+    <p>Sub total </p>
+</div>
+
+<div>
+    <p>{{this.cs.calcTotalPrice().toLocaleString('en-US', {style: 'currency', currency: 'USD'})}}</p>
+
+</div>
+
+<div class="taxed">
+    <p>Estimate Tax </p>
+</div>
+
+<p>$0</p>
+
+<div class="discount">
+    <p>Discount </p>
+</div>
+
+<p>$0</p>
+<button mat-flat-button>PAY {{this.cs.calcTotalPrice().toLocaleString('en-US', {style: 'currency', currency: 'USD'}) }}</button>
+
+</div>
+</div>

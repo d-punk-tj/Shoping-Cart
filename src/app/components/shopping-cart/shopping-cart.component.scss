@@ -1,0 +1,32 @@
+.example-margin{
+    float: right;
+}
+
+.cart-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  // change the second "1fr" to "auto"
+    grid-column-gap: 10px;
+  }
+
+.billing{
+    display: grid;
+    grid-template-columns: 3fr 1fr ;
+  // change the second "1fr" to "auto"
+    grid-column-gap: 10px;
+
+    position:absolute;
+   bottom: 5rem;
+   height:60px;
+   width: 40%;
+
+}
+
+button{
+    background: #219821;
+    color: white;
+}
+
+.sc{
+    height: 60vh !important;
+}
